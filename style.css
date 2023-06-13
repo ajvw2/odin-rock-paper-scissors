@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #f2f7f5;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header {
+    color: #00473e;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: .1rem;
+    padding: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+#header-img {
+    width: 45px;
+    height: 45px;
+    filter: invert(64%) sepia(90%) saturate(467%) hue-rotate(340deg) brightness(106%) contrast(96%);
+}
+
+#title-text {
+    margin: 0;
+    padding: 0;
+}
+
+#header-button {
+    justify-self: flex-end;
+}
+
+.middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 64px;
+}
+
+.game {
+    display: flex;
+}
+
+.player-score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    width: 210px;
+    gap: 8px;
+}
+
+.score {
+    font-size: 100px;
+    color: #475d5b;
+}
+
+.player {
+    font-size: 14px;
+    color: #475d5bd0;
+}
+
+.buttons {
+    display: flex;
+    gap: 32px;
+    margin-left: 128px;
+    margin-right: 128px;
+}
+
+button {
+    background-color: #faae2b;
+    padding: 10px 30px;
+    border: 0px;
+    border-radius: 8px;
+    color: #00473e;
+    font-size: 14px;
+    font-weight: 800px;
+}
+
+.game-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .07s ease;
+}
+
+.game-button:hover {
+    transform: scale(1.05);
+    box-shadow: #faae2b8f 0px 2px 8px 0px;
+}
+    
+
+.button-image {
+    filter: invert(17%) sepia(80%) saturate(746%) hue-rotate(131deg) brightness(100%) contrast(101%);
+    width: 100px;
+}
+
+.round-result {
+    color: #475d5b;
+    font-size: 24px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    padding: 12px;
+    background-color: #00473e;
+}
+
+a {
+    font-size: 10px;
+    text-decoration: none;
+    color: #ffa8ba;
+}

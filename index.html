@@ -1,10 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="uft-8">
-        <title>Rock, Paper, Scissors</title>
-    </head>
-    <body>
-        <script src="script.js"></script>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="script.js" defer></script> -->
+    <link rel="stylesheet" href="style.css">    
+    <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+    <div class="header">
+        <img id="header-img" src="./images/rock-paper-scissors.png">
+        <h2 id="title-text">Rock  Paper  Scissors</h2>
+    </div>
+    <div class="middle">
+        <div class="game">
+            <div class="player-score">
+                <div class="score">0</div>
+                <div class="player">Player Score</div>
+            </div>
+            <div class="buttons">
+                <button class="game-button" id="rock">
+                    <img class="button-image" src="./images/rock.png">
+                    <!-- <p class="game-button-text">Rock</p> -->
+                </button>
+                <button class="game-button" id="paper">
+                    <img class="button-image" src="./images/paper.png">
+                    <!-- <p class="game-button-text">Paper</p> -->
+                </button>
+                <button class="game-button" id="scissors">
+                    <img class="button-image" src="./images/scissors.png">
+                    <!-- <p class="game-button-text">Scissors</p> -->
+                </button>
+            </div>
+            <div class="player-score">
+                <div class="score">0</div>
+                <div class="player">Computer Score</div>
+            </div>
+            <div class="computer-score"></div>
+        </div>
+        <div class="round-result">
+            You lost!
+        </div>    
+    </div>
+    
+    <div class="footer">
+        <a href="https://www.flaticon.com/free-icons/rock-paper-scissors" title="rock paper scissors icons">Rock paper scissors icons created by Freepik - Flaticon</a>
+        <a href="https://www.flaticon.com/free-icons/resources" title="resources icons">Resources icons created by Smashicons - Flaticon</a>
+        <a href="https://www.flaticon.com/free-icons/paper" title="paper icons">Paper icons created by Freepik - Flaticon</a>
+        <a href="https://www.flaticon.com/free-icons/scissors" title="scissors icons">Scissors icons created by Freepik - Flaticon</a>
+
+    </div>
+</body>
 </html>
