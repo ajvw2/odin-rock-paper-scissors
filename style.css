@@ -1,3 +1,4 @@
+/* https://www.happyhues.co/palettes/5 */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 html {
@@ -45,9 +46,6 @@ body {
     padding: 0;
 }
 
-#header-button {
-    justify-self: flex-end;
-}
 
 .middle {
     display: flex;
@@ -57,11 +55,26 @@ body {
     gap: 64px;
 }
 
-.game {
-    display: flex;
+#round {
+    color: #00473e;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: -48px;
 }
 
-.player-score {
+#pick {
+    color: #475d5bd0;
+    font-size: 14px;
+    margin-bottom: 48px;
+}
+
+.game {
+    display: flex;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.score {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,18 +86,21 @@ body {
     gap: 8px;
 }
 
-.score {
+.player-score,
+.computer-score {
     font-size: 100px;
     color: #475d5b;
+    transition: all 0.4s ease;
 }
 
-.player {
+.score-text {
     font-size: 14px;
     color: #475d5bd0;
 }
 
 .buttons {
     display: flex;
+    align-items: center;
     gap: 32px;
     margin-left: 128px;
     margin-right: 128px;
@@ -94,33 +110,100 @@ button {
     background-color: #faae2b;
     padding: 10px 30px;
     border: 0px;
-    border-radius: 8px;
+    border-radius: 10px;
     color: #00473e;
     font-size: 14px;
-    font-weight: 800px;
+}
+
+.play-button {
+    align-self: center;
+    font-weight: 800;
+    transition: all .2s ease;
+    margin-bottom: 16px;
+}
+
+.play-button:hover {
+    transform: scale(1.05);
+    box-shadow: #faae2b8f 0px 2px 8px 0px;
 }
 
 .game-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all .07s ease;
+    transition: all .2s ease;
+    height: 140px;
 }
 
 .game-button:hover {
     transform: scale(1.05);
     box-shadow: #faae2b8f 0px 2px 8px 0px;
 }
-    
+
+.selected {
+    transform: scale(1.08);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    background-color: #ffa8ba;
+}
+
+.play-button.selected {
+    transform: scale(1.05);
+    background-color: #faae2b;
+    box-shadow: rgba(50, 50, 93, 0) 0px 50px 100px -20px, rgba(0, 0, 0, 0) 0px 30px 60px -30px;
+}
+
+.game-button.selected:hover {
+    transform: scale(1.08);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.144) 0px -2px 6px 0px inset;
+}
+
+.play-button.selected:hover {
+    transform: scale(1.05);
+    box-shadow: rgba(50, 50, 93, 0) 0px 50px 100px -20px, rgba(0, 0, 0, 0) 0px 30px 60px -30px;
+}
+
+.play-button.selected.disappear {
+    transition: all .8s ease;
+    background-color: #faae2b00;
+    color: #00473d00;
+    box-shadow: rgba(50, 50, 93, 0) 0px 50px 100px -20px, rgba(0, 0, 0, 0) 0px 30px 60px -30px;
+}
 
 .button-image {
     filter: invert(17%) sepia(80%) saturate(746%) hue-rotate(131deg) brightness(100%) contrast(101%);
-    width: 100px;
+    width: 80px;
 }
 
 .round-result {
-    color: #475d5b;
+
+    font-size: 14px;
+    color: #475d5bd0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 16px;
+    height: 200px;
+}
+
+.icon {
+    filter: invert(17%) sepia(80%) saturate(746%) hue-rotate(131deg) brightness(100%) contrast(101%);
+    width: 24px;
+}
+
+.result-text {
+    
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    height: 30px;
+}
+
+.winner-text {
     font-size: 24px;
+    font-weight: 800;
+    color: #faae2b;
 }
 
 .footer {
