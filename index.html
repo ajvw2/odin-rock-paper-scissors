@@ -18,11 +18,16 @@
             <div class="score-slider-div">
                 <input type="range" min="3" max="9" value="5" class="slider" id="score-slider">
                 <div id="selected-score"></div>
+                <div class="reset-button"><button id="reset">New Game</button></div>
             </div>
+            
         </div>
-        <div class="game-middle">
+        <div class="game-middle selectDisable">
             <div class="score-display">
-                <div class="score-amount player">0</div>
+                <div class="score-amount-container">
+                    <div class="score-amount player"></div>
+                    <div class="win-amount"></div>
+                </div>
                 <div class="score-text">Player</div>
             </div>
             <div class="buttons">
@@ -38,7 +43,10 @@
                 </div>
             </div>
             <div class="score-display">
-                <div class="score-amount computer">0</div>
+                <div class="score-amount-container">
+                    <div class="score-amount computer"></div>
+                    <div class="win-amount"></div>
+                </div>
                 <div class="score-text">Computer</div>
             </div>
         </div>
@@ -56,17 +64,17 @@
                 </a>
             </div>
             <div class="image-links">
-                <a href="https://www.flaticon.com/free-icons/rock-paper-scissors" title="rock paper scissors icons">Rock paper scissors icons created by Freepik - Flaticon</a>
-                <a href="https://www.flaticon.com/free-icons/resources" title="resources icons">Resources icons created by Smashicons - Flaticon</a>
-                <a href="https://www.flaticon.com/free-icons/paper" title="paper icons">Paper icons created by Freepik - Flaticon</a>
-                <a href="https://www.flaticon.com/free-icons/scissors" title="scissors icons">Scissors icons created by Freepik - Flaticon</a>              
+                <a href="https://www.flaticon.com/free-icons/rock-paper-scissors" title="rock paper scissors icons">Title icon created by Freepik (Flaticon)</a>
+                <a href="https://www.flaticon.com/free-icons/resources" title="resources icons">Rock created by Smashicons (Flaticon)</a>
+                <a href="https://www.flaticon.com/free-icons/paper" title="paper icons">Paper created by Freepik (Flaticon)</a>
+                <a href="https://www.flaticon.com/free-icons/scissors" title="scissors icons">Scissors created by Freepik (Flaticon)</a>              
             </div>
         </div>
     </div>
     <div class="overlay">
         <div class="overlay-box">
-            <div class="overlay-text">You won!</div>
-            <button class="restart-button">New game</button>
+            <div class="overlay-text"></div>
+            <div class="overlay-reset-button"><button id="reset2">New Game</button></div>
         </div>
     </div>
     

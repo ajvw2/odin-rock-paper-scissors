@@ -1,6 +1,22 @@
 /* https://www.happyhues.co/palettes/5 */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+.selectDisable {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.selectEnable { 
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -o-user-select: text;
+    user-select: text;
+}
+
 html {
     box-sizing: border-box;
 }
@@ -17,7 +33,7 @@ body {
     display: flex;
     height: 100vh;
     justify-content: center;
-    background-color: #fff3ec;
+    background-color: #55423d;
 }
 
 .body-wrapper {
@@ -97,12 +113,52 @@ body {
     cursor: pointer;
 }
 
+.reset-button {
+    padding-left: 16px;
+    display: flex;
+    min-width: 145px;
+}
+
+#reset,
+#reset2 {
+    background-color: #ffc0ada8;
+    border: none;
+    border-radius: 8px;
+    color: #271c19;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 6px 20px;
+    transition: all 0.4s ease, background-color 0.1s ease, color 0.1s ease;
+}
+
+#reset:hover,
+#reset2:hover {
+    background-color: #ffc0ad;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+#reset.selected,
+#reset2.selected {
+    color: #fff3ec;
+    background-color: #e78fb3;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    animation-name: reset-button-animation;
+    animation-duration: 0.7s;
+    animation-timing-function: ease;
+}
+
+@keyframes reset-button-animation {
+    50% {transform: scale(0.9);}
+}
+
 .game-middle {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 24px;
+    padding-top: 30px;
+    padding-bottom: 50px;
 }
 
 .score-display {
@@ -113,6 +169,11 @@ body {
     justify-content: center;
 }
 
+.score-amount-container {
+    display: flex;
+    align-items: flex-end;
+}
+
 .score-amount {
     font-size: 100px;
     color: #fffffe;
@@ -120,7 +181,14 @@ body {
 
 .score-text {
     font-size: 16px;
-    color: #fff3ec;
+    font-weight: 300;
+    color: #fff3ecd0;
+}
+
+.win-amount {
+    font-size: 14px;
+    color: #fff3eca6;
+    padding-bottom: 20px;
 }
 
 .buttons {
@@ -146,7 +214,7 @@ body {
     background-color: #ffc0ad;
     border: none;
     border-radius: 8px;
-    transition: all 0.1s ease;
+    transition: all 0.1s ease-in;
 }
 
 .game-button.player:hover {
@@ -163,7 +231,7 @@ body {
 .game-button-img {
     width: 100px;
     object-fit: cover;
-    transition: transform 0.2s ease;
+    transition: transform 1.0s ease, background-color 0.1s ease;
     filter: invert(8%) sepia(7%) saturate(2651%) hue-rotate(326deg) brightness(95%) contrast(90%);
 }
 
@@ -175,11 +243,57 @@ body {
     transform: scale(1.15);
     background-color: #e78fb3;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    animation-name: selected-animation;
+    animation-duration: 0.7s;
+    animation-timing-function: ease;
+}
+
+@keyframes selected-animation {
+    0% {box-shadow: 
+            rgba(0, 0, 0, 0.19) 0px 10px 20px, 
+            rgba(0, 0, 0, 0.23) 0px 6px 6px, 
+            #e78fb300 0px 0px 8px, 
+            #e78fb300 0px 0px 4px;
+        }
+    50% {box-shadow: 
+            rgba(0, 0, 0, 0.19) 0px 10px 20px, 
+            rgba(0, 0, 0, 0.23) 0px 6px 6px, 
+            #e78fb421 0px 0px 8px, 
+            #e9b4ca11 0px 0px 4px;
+        transform: rotate(-2deg) scale(1);}
+    100% {box-shadow: 
+            rgba(0, 0, 0, 0.19) 0px 10px 20px, 
+            rgba(0, 0, 0, 0.23) 0px 6px 6px, 
+            #e78fb300 0px 0px 8px,
+            #e78fb300 0px 0px 4px;}
 }
 
 .game-button.computer.selected {
     transform: scale(1.05);
     background-color: #e78fb4a4;
+    animation-name: selected-computer-animation;
+}
+
+@keyframes selected-computer-animation {
+    0% {
+        box-shadow: 
+        rgba(0, 0, 0, 0.19) 0px 10px 20px, 
+        rgba(0, 0, 0, 0.23) 0px 6px 6px, 
+        #e78fb300 0px 0px 8px, 
+        #e78fb300 0px 0px 4px;
+    }
+    50% {box-shadow: 
+        rgba(0, 0, 0, 0.19) 0px 10px 20px, 
+        rgba(0, 0, 0, 0.23) 0px 6px 6px, 
+        #e78fb421 0px 0px 8px, 
+        #e9b4ca2c 0px 0px 4px;
+        transform: scale(1) rotate(2deg);
+    }
+    100% {box-shadow: 
+        rgba(0, 0, 0, 0.19) 0px 10px 20px, 
+        rgba(0, 0, 0, 0.23) 0px 6px 6px, 
+        #e78fb300 0px 0px 8px,
+        #e78fb300 0px 0px 4px;}
 }
 
 .game-button.selected:hover {
@@ -193,6 +307,10 @@ body {
     filter: invert(94%) sepia(100%) saturate(210%) hue-rotate(295deg) brightness(107%) contrast(104%);
 }
 
+/* .game-button.selected.computer .game-button-img {
+    filter: invert(83%) sepia(4%) saturate(994%) hue-rotate(322deg) brightness(116%) contrast(102%);
+} */
+
 .game-button.selected:hover .game-button-img {
     transform: scale(1.1);
     filter: invert(94%) sepia(100%) saturate(210%) hue-rotate(295deg) brightness(107%) contrast(104%);
@@ -201,6 +319,8 @@ body {
 .footer {
     background-color: #ffc0ad;
     padding: 10px;
+    width: 100vw;
+    align-self: center;
 }
 
 p {
@@ -256,7 +376,7 @@ a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.151);
+    background-color: rgba(0, 0, 0, 0.397);
     z-index: 2;
     cursor: pointer;
 }
@@ -265,18 +385,23 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
-    padding: 48px;
-    background-color: white;
+    gap: 20px;
+    padding: 64px;
+    background-color: #55423d;
+    border: 2px dashed #fffffe;
+    border-radius: 8px;
+    box-shadow: rgba(255, 255, 255, 0.815) 0px 20px 50px, #e78fb3 -10px -20px 50px, #9656a1 20px 10px 100px;
 }
 
 .overlay-text {
+    color: #fffffe;
     font-size: 24px;
 }
 
-.restart-button {
-    padding: 5px;
+.overlay-reset-button {
+    padding-left: 0px;
 }
+
 
 @media(max-width: 500px) {
     .header {
@@ -306,6 +431,26 @@ a:hover {
         font-size: 12px;
     }
 
+    .score-slider-div {
+        flex-wrap: wrap;
+        max-width: 150px;
+    }
+
+    .reset-button {
+        padding-top: 7px;
+        padding-left: 0px;
+    }
+
+    #reset {
+        font-size: 12px;
+    }
+
+    .win-amount {
+        font-size: 12px;
+        padding-bottom: 5px;
+        padding-left: 3px;
+    }
+
     .game-button {
         min-width: 70px;
         max-width: 70px;
@@ -318,7 +463,7 @@ a:hover {
 
     .copyright {
         font-size: 12px;
-        margin-bottom: 3px;
+        margin-bottom: 5px;
     }
     
     #github {
