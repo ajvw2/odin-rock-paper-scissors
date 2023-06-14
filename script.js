@@ -19,42 +19,29 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// function deletePlayButton() {
-//     this.classList.add('disappear');
-//     playButton.addEventListener('transitionend', () => {return;});
-// }
+
+const slider = document.querySelector('#score-slider');
+const selectedScore = document.querySelector('#selected-score');
+selectedScore.textContent = `${slider.value}`;
+
+slider.addEventListener('change', () => {
+    selectedScore.textContent = `${slider.value}`;
+});
 
 let playerScore = 0;
 let computerScore = 0;
-let round = 1;
 let playerChoice;
 let computerChoice;
 
-const playerScoreDisplay = document.querySelector('.player-score');
-const computerScoreDisplay = document.querySelector('.computer-score');
-const roundDisplay = document.querySelector("#round");
+const playerScoreDisplay = document.querySelector('.score-amount.player');
+const computerScoreDisplay = document.querySelector('.score-amount.computer');
 
 playerScoreDisplay.textContent = `${playerScore}`;
 computerScoreDisplay.textContent = `${computerScore}`;
-roundDisplay.textContent = `ROUND ${round}`;
 
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
-
-const playButton = document.querySelector(".play-button");
-const roundResult = document.querySelector(".round-result");
-
-const computerChoiceDisplay = document.createElement('div');
-computerChoiceDisplay.classList.add('result-text');
-const roundResultDisplay = document.createElement('div');
-roundResultDisplay.classList.add('result-text');
-const roundWinnerDisplay = document.createElement('div');
-roundWinnerDisplay.classList.add('winner-text');
-roundResult.appendChild(computerChoiceDisplay);
-roundResult.appendChild(roundResultDisplay);
-roundResult.appendChild(roundWinnerDisplay);
-
 
 rock.addEventListener('click', () => {
     playerChoice = 'Rock';
@@ -76,66 +63,3 @@ scissors.addEventListener('click', () => {
     rock.classList.remove('selected');
     paper.classList.remove('selected');
 });
-
-
-
-playButton.addEventListener('click', (e) => {
-    if (!playerChoice) {
-        return;
-    }
-    // Disable game buttons
-    rock.disabled = true;
-    paper.disabled = true;
-    scissors.disabled = true;
-    playButton.disabled = true;
-
-    // Delete old result content
-    roundResult.removeChild(computerChoiceDisplay);
-    roundResult.removeChild(roundResultDisplay);
-    roundResult.removeChild(roundWinnerDisplay);
-    
-    // Fade out play button
-    playButton.classList.add('selected');
-    // playButton.addEventListener('transitionend', deletePlayButton);
-
-    computerChoice = getComputerChoice();
-    
-    computerChoiceDisplay.innerHTML = `The computer chose <img class="icon" src="./images/${computerChoice.toLowerCase()}.png">`;
-    roundResult.appendChild(computerChoiceDisplay);
-
-    
-    let result = playRound(playerChoice, computerChoice);
-    if (result == 2) {
-        roundResultDisplay.innerHTML = `<img class="icon" src="./images/${playerChoice.toLowerCase()}.png"> beats <img class="icon" src="./images/${computerChoice.toLowerCase()}.png">`;
-        roundWinnerDisplay.textContent = 'YOU WON!';
-        playerScore++;
-        playerScoreDisplay.textContent = `${playerScore}`;
-    } else if (result == 1) {
-        roundResultDisplay.innerHTML = ' ';
-        roundWinnerDisplay.textContent = 'IT\'S A TIE';
-    } else {
-        roundResultDisplay.innerHTML = `<img class="icon" src="./images/${computerChoice.toLowerCase()}.png"> beats <img class="icon" src="./images/${playerChoice.toLowerCase()}.png">`;
-        roundWinnerDisplay.textContent = 'YOU LOST';
-        computerScore++;
-        computerScoreDisplay.textContent = `${computerScore}`;
-    }  
-    
-    roundResult.appendChild(roundResultDisplay);
-    roundResult.appendChild(roundWinnerDisplay);
-
-    // Enable and reset buttons
-    rock.disabled = false;
-    rock.classList.remove('selected');
-    paper.disabled = false;
-    paper.classList.remove('selected');
-    scissors.disabled = false;
-    scissors.classList.remove('selected');
-    playButton.disabled = false;
-    playButton.classList.remove('selected');
-
-    // Update round
-    round++;
-    roundDisplay.textContent = `ROUND ${round}`;
-
-});
-
