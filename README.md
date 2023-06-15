@@ -30,6 +30,19 @@ A final challenge was to get some asynchronous timing control going in the JavaS
 
 All in all, this was a fun learning experience that laid some nice foundations for the road ahead. <br>
 
+#### TODO
+
+- Organize JavaScript code
+    - Improve function order
+    - Update some comments
+    - Use less global variables
+
+- Organize styling
+    - Minimize required classes and ID's
+    - Improve class and ID names
+    - Experiment with flex wrapping in the middle section (ideal would be to have the score displays go on top of the icons when the screen width becomes small, so the icons can stay larger)
+
+
 #### Creator
 
 My Github profile: [ajvw2](https://github.com/ajvw2)
